@@ -1,0 +1,48 @@
+﻿@using EntityLayer.Concrete
+@model List<Category>
+
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_admin_Layout.cshtml";
+}
+
+<h2> <center> İstatistikler </center></h2>
+
+<br />
+
+
+<div class="card-columns ">
+    <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
+        <div class="card-header">Toplam Kategori Sayısı </div>
+        <div class="card-body">
+            <h5 class="card-title"> Toplam :  @ViewBag.categoriesLength </h5>
+        </div>
+    </div>
+    <div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
+        <div class="card-header">Yazılım Kategori Sayısı</div>
+        <div class="card-body">
+            <h5 class="card-title">Toplam: @ViewBag.softwareCategoryLength</h5>
+        </div>
+    </div>
+    <div class="card text-white bg-success mb-3" style="max-width: 18rem;">
+        <div class="card-header">Yazar Adında 'a' Harfi Geçen Yazar Sayısı</div>
+        <div class="card-body">
+            <h5 class="card-title">Toplam: @ViewBag.containLetter</h5>
+        </div>
+    </div>
+    <div class="card text-white bg-danger mb-3" style="max-width: 18rem;">
+        <div class="card-header">En Fazla Başlığa Sahip Kategori Adı</div>
+        <div class="card-body">
+            <h5 class="card-title">Kategori Adı: @ViewBag.repetedCategoryInHeadings</h5>
+        </div>
+    </div>
+    
+
+    <div class="card text-white bg-info mb-3" style="max-width: 18rem;">
+        <div class="card-header">Kategori Tablosunda Durumu True olan Kategoriler ile False Olan Kategoriler Arasındaki Sayısal Fark</div>
+        <div class="card-body">
+            <h5 class="card-title">Fark: @ViewBag.statusDifferenceValue</h5>
+        </div>
+
+    </div>

@@ -18,7 +18,8 @@ namespace DataAccessLayer.Concrete.Repositories
 
         public GenericRepository()
         {
-            _object = c.Set<T>(); 
+            _object = c.Set<T>();
+            
         }
         
         
@@ -26,6 +27,13 @@ namespace DataAccessLayer.Concrete.Repositories
         {
             _object.Remove(p);
             c.SaveChanges();
+        }
+
+
+        // Sadece listeden id döndürülür.
+        public T Get(Expression<Func<T, bool>> filter)
+        {
+            return _object.SingleOrDefault(filter);
         }
 
         public void Insert(T p)

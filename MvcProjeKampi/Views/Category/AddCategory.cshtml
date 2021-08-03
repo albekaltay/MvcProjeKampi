@@ -1,0 +1,67 @@
+﻿@model EntityLayer.Concrete.Category
+
+
+@{
+    Layout = null;
+}
+
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+
+<center><h1>Yeni Kategori Ekleme Sayfası</h1></center>
+<br />
+
+
+@using (Html.BeginForm("AddCategory","Category",FormMethod.Post))
+            {
+<div class="form-group">
+    @Html.Label("Kategori Adı")
+    @Html.TextBoxFor(x => x.CategoryName, new {placeHolder="Ad Giriniz." })
+    @Html.ValidationMessageFor(x=>x.CategoryName)
+    
+    <br /> <br />
+    @Html.Label("Kategori Açıklaması")
+    @Html.TextBoxFor(x => x.CategoryDescription, new { placeHolder = "Açıklama Giriniz." })
+    @Html.ValidationMessageFor(x=>x.CategoryDescription)
+
+    <br /> <br />
+           <button> Ekle </button>
+
+</div>
+            }
+
+
+@*<form class="form-group" method="post">
+
+    <center><label> Kategori Adı: </label></center>
+    <input class="form-control" name="CategoryName" placeholder="Kategori Adı Giriniz." />
+
+    <br />
+
+
+    <center><label> Kategori Açıklaması: </label> </center>
+    <textarea class="form-control" name="CategoryDescription" placeholder="Açıklama Giriniz."></textarea>
+
+    <br />
+
+    <center><label> Durum: </label></center>
+
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="CategoryStatus" value="option1">
+        <label class="form-check-label" for="inlineRadio1">True</label>
+
+
+    </div>
+
+
+
+    <br />
+
+
+    <center> <button class="btn btn-success" type="submit"> Ekle </button></center>
+
+
+
+
+
+
+</form>*@
